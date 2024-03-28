@@ -1,0 +1,197 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welche Mercedes Limousine passt zu Dir?</h1>
+    </div>
+    <div id="container">
+        <aside id="filters">
+            <h2>Filter</h2>
+            <!-- Filter für Preis -->
+            <div class="filter-option filter-group">
+                <label for="price-min">Preis (€)</label>
+                <input type="number" id="price-min" name="price-min" placeholder="von">
+                <input type="number" id="price-max" name="price-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Leistung -->
+            <div class="filter-option filter-group">
+                <label for="power-min">Leistung (PS):</label>
+                <input type="number" id="power-min" name="power-min" placeholder="von">
+                <input type="number" id="power-max" name="power-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Beschleunigung -->
+            <div class="filter-option filter-group">
+                <label for="acceleration-min">0-100 km/h (s):</label>
+                <input type="number" id="acceleration-min" name="acceleration-min" placeholder="von">
+                <input type="number" id="acceleration-max" name="acceleration-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Verbrauch -->
+            <div class="filter-option filter-group">
+                <label for="consumption-min">Verbrauch (€/100km):</label>
+                <input type="number" id="consumption-min" name="consumption-min" placeholder="von">
+                <input type="number" id="consumption-max" name="consumption-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für CO2-Emissionen -->
+            <div class="filter-option filter-group">
+                <label for="co2-min">CO2-Emissionen (g/km):</label>
+                <input type="number" id="co2-min" name="co2-min" placeholder="von">
+                <input type="number" id="co2-max" name="co2-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Höchstgeschwindigkeit -->
+            <div class="filter-option filter-group">
+                <label for="top-speed-min">Max. Geschw. (km/h):</label>
+                <input type="number" id="top-speed-min" name="top-speed-min" placeholder="von">
+                <input type="number" id="top-speed-max" name="top-speed-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Drehmoment -->
+            <div class="filter-option filter-group">
+                <label for="torque-min">Drehmoment (Nm):</label>
+                <input type="number" id="torque-min" name="torque-min" placeholder="von">
+                <input type="number" id="torque-max" name="torque-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Leergewicht -->
+            <div class="filter-option filter-group">
+                <label for="curb-weight-min">Leergewicht (kg):</label>
+                <input type="number" id="curb-weight-min" name="curb-weight-min" placeholder="von">
+                <input type="number" id="curb-weight-max" name="curb-weight-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Sitzplätze -->
+            <div class="filter-option filter-group">
+                <label for="
+                seats">Sitzplätze:</label>
+                <select id="seats" name="seats">
+                    <option value="">Bitte auswählen</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <!-- Weitere Optionen für Sitzplätze hier hinzufügen -->
+                </select>
+            </div>
+            <!-- Filter für Kofferraumvolumen -->
+            <div class="filter-option filter-group">
+                <label for="trunk-volume-min">Kofferraumvolumen (l):</label>
+                <input type="number" id="trunk-volume-min" name="trunk-volume-min" placeholder="von">
+                <input type="number" id="trunk-volume-max" name="trunk-volume-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Länge -->
+            <div class="filter-option filter-group">
+                <label for="length-min">Länge (cm):</label>
+                <input type="number" id="length-min" name="length-min" placeholder="von">
+                <input type="number" id="length-max" name="length-max" placeholder="bis">
+            </div>
+
+            <!-- Filter für Fahrzeugklasse -->
+            <div class="filter-option filter-group">
+                <label for="vehicle-class">Fahrzeugklasse:</label>
+                <select id="vehicle-class" name="vehicle-class">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Limousine">Limousine</option>
+                    <!-- Weitere Fahrzeugklassen hier hinzufügen -->
+                </select>
+            </div>
+
+            <!-- Filter für Motorart -->
+            <div class="filter-option filter-group">
+                <label for="engine-type">Motorart:</label>
+                <select id="engine-type" name="engine-type">
+                    <option value="">Bitte auswählen</option>
+                    <option value="Verbrenner">Verbrenner</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Elektro">Elektro</option>
+                    <!-- Weitere Motorarten hier hinzufügen -->
+                </select>
+            </div>
+
+
+
+            <!-- Weitere Filter hier hinzufügen -->
+        </aside>
+        <main id="preferences">
+            <h2>Deine Wünsche</h2>
+
+            <div class="filter-group">
+                <h3>Leistung</h3>
+                <input type="range" id="power" name="power" min="50" max="600" value="325" oninput="updateOutput(this)">
+                <output for="power" id="power-output">325 PS</output>
+            </div>
+
+            <div class="filter-group">
+                <h3>Beschleunigung</h3>
+                <input type="range" id="acceleration" name="acceleration" min="2" max="10" value="6" step="0.1"
+                    oninput="updateOutput(this)">
+                <output for="acceleration" id="acceleration-output">6 s</output>
+            </div>
+
+            <div class="filter-group">
+                <h3>Preis</h3>
+                <input type="range" id="price" name="price" min="20000" max="100000" value="60000" step="500"
+                    oninput="updateOutput(this)">
+                <output for="price" id="price-output">60000 €</output>
+            </div>
+
+            <div class="filter-group">
+                <h3>Verbrauch</h3>
+                <input type="range" id="consumption" name="consumption" min="3" max="15" value="9" step="0.5"
+                    oninput="updateOutput(this)">
+                <output for="consumption" id="consumption-output">9 €/100km</output>
+            </div>
+
+            <div class="filter-group">
+                <h3>Länge</h3>
+                <input type="range" id="length" name="length" min="3" max="5" value="4" step="1"
+                    oninput="updateOutput(this)">
+                <output for="length" id="length-output">4 CM</output>
+            </div>
+
+
+            <!-- Weitere Wünsche hier hinzufügen -->
+            <button id="search-button" onclick="search()">Suchen</button>
+
+
+        </main>
+        <aside id="suggestions">
+            <h2>Vorschläge</h2>
+            <div id="search-results">
+                <!-- Beispiel für einen Vorschlag -->
+                <div class="suggestion">
+                    <h3>Beispielvorschlag</h3>
+                    <p>Passt zu XX.X%</p>
+                </div>
+                <!-- Weitere Vorschläge werden hier über JavaScript eingefügt -->
+            </div>
+        </aside>
+    </div>
+    <script>
+        function updateOutput(slider) {
+            var value = slider.value;
+            // Begrenze die Nachkommastellen für Beschleunigung auf 1
+
+
+            document.getElementById(slider.name + '-output').textContent = value +
+                (slider.name === 'price' ? ' €' : slider.name === 'acceleration' ? ' s' : slider.name === 'consumption' ? ' €/100km' : slider.name === 'length' ? ' cm' : ' PS');
+        }
+
+    </script>
+</body>
+
+</html>

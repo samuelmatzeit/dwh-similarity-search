@@ -1,0 +1,71 @@
+﻿Modell;Leistung;Beschleunigung 0-100 km/h in sekunden;Preis (€);Verbrauch (€ / 100km);CO2-Emissionen (g/km);Höchstgeschwindigkeit;Drehmoment;Leergewicht;Sitzplätze;Kofferraumvolumen in L;Länge;Fahrzeugklasse;Motorart
+C 180;193;8,6;45.202,15;10,71;143;231;250;1.645;5;455;4.751;Limousine;Verbrenner
+C 200;227;7,3;49.515,90;10,71;144;246;300;1.665;5;455;4.751;Limousine;Verbrenner
+C 200 d;186;7,7;48.058,15;7,82;120;230;380;1.745;5;455;4.751;Limousine;Verbrenner
+C 200 4MATIC;227;7,1;51.895,90;11,22;150;241;300;1.725;5;455;4.751;Limousine;Verbrenner
+C 220 d;220;7,3;52.163,65;7,65;119;245;440;1.745;5;455;4.751;Limousine;Verbrenner
+C 220 d 4MATIC;220;7,4;54.543,65;8,16;126;239;440;1.810;5;455;4.751;Limousine;Verbrenner
+C 300;281;6;58.988,30;11,05;148;250;400;1.715;5;455;4.751;Limousine;Verbrenner
+C 300 4MATIC;281;6;61.368,30;11,56;154;250;400;1.790;5;455;4.751;Limousine;Verbrenner
+C 300 d;288;5,7;62.885,55;8,67;133;250;550;1.815;5;455;4.751;Limousine;Verbrenner
+C 300 d 4MATIC;288;6,9;65.265,55;8,84;136;250;550;1.855;5;455;4.751;Limousine;Verbrenner
+Mercedes-AMG C 43 4MATIC Limousine;422;4,6;84.246,05;14,79;197;250;500;1.840;5;455;4.751;Limousine;Verbrenner
+Mercedes-AMG C 63 E PERFORMANCE;680;3,4;115.174,15;14,79;156;280;1.020;2.165;5;280;4.751;Limousine;Verbrenner
+E 200 Limousine;227;7,5;61.999,00;10,88;144;240;320;1.825;5;540;4.949;Limousine;Verbrenner
+E 200 4MATIC Limousine;227;7,6;64.736,00;11,56;155;236;320;1.890;5;540;4.949;Limousine;Verbrenner
+E 220 d Limousine;220;7,6;64.319,50;8,16;125;238;440;1.915;5;540;4.949;Limousine;Verbrenner
+E 220 d 4MATIC Limousine;220;7,8;67.056,50;8,33;130;234;440;1.975;5;540;4.949;Limousine;Verbrenner
+E 450 4MATIC Limousine;404;4,5;82.169,50;12,92;172;250;500;1.970;5;540;4.949;Limousine;Verbrenner
+E 450 d 4MATIC Limousine;390;4,8;85.858,50;10,03;155;250;750;2.065;5;540;4.949;Limousine;Verbrenner
+S 350 d Limousine;333;5,8;112.086,10;10,03;154;250;650;2.090;5;540;5.179;Limousine;Verbrenner
+S 350 d 4MATIC Limousine;333;5,5;115.894,10;10,38;160;250;650;2.125;5;540;5.179;Limousine;Verbrenner
+S 450 4MATIC Limousine;404;5;122.439,10;13,77;184;250;500;2.070;5;540;5.179;Limousine;Verbrenner
+S 450 d 4MATIC Limousine;390;5;123.629,10;10,53;163;250;750;2.125;5;540;5.179;Limousine;Verbrenner
+S 500 4MATIC Limousine;472;4,7;133.518,00;14,11;188;250;560;2.085;5;540;5.179;Limousine;Verbrenner
+S 580 4MATIC Limousine;526;4,4;139.825,00;16,83;225;250;700;2.140;5;540;5.179;Limousine;Verbrenner
+S 350 d Limousine lang;333;5,6;115.299,10;10,03;156;250;650;2.110;5;540;5.289;Limousine;Verbrenner
+S 350 d 4MATIC Limousine lang;333;5,5;119.107,10;10,38;161;250;650;2.145;5;540;5.289;Limousine;Verbrenner
+S 450 4MATIC Limousine lang;404;5;126.128,10;13,94;185;250;500;2.090;5;540;5.289;Limousine;Verbrenner
+S 450 d 4MATIC Limousine lang;390;5;127.199,10;10,53;164;250;750;2.145;5;540;5.289;Limousine;Verbrenner
+S 500 4MATIC Limousine lang;472;4,7;136.731,00;14,11;188;250;560;2.105;5;540;5.289;Limousine;Verbrenner
+Mercedes-Maybach 580;526;4,8;182.070,00;17,51;234;250;700;2.310;5;505;5.469;Limousine;Verbrenner
+Mercedes-Maybach 680;612;4,5;237.208,65;22,44;301;250;900;2.365;5;495;5.469;Limousine;Verbrenner
+A 180 Limousine;150;9,3;38.175,20;9,86;131;216;230;1.450;5;395;4.558;Limousine;Verbrenner
+A 180 d Limousine;116;9,9;39.513,95;8,5;130;206;280;1.540;5;395;4.558;Limousine;Verbrenner
+A 200 Limousine;177;8,3;40.620,65;9,86;131;230;270;1.450;5;395;4.558;Limousine;Verbrenner
+A 200 d Limousine;150;8,4;41.596,45;8,16;127;227;320;1.540;5;395;4.558;Limousine;Verbrenner
+A 220 4MATIC Limousine;204;7,2;44.071,65;11,56;154;237;300;1.585;5;395;4.558;Limousine;Verbrenner
+A 220 d Limousine;190;7,3;44.410,80;8,5;131;246;400;1.570;5;395;4.558;Limousine;Verbrenner
+A 250 4MATIC Limousine;238;6,4;50.527,40;11,56;154;250;350;1.590;5;395;4.558;Limousine;Verbrenner
+Mercedes-AMG A 35 4MATIC Limousine;320;4,8;59.613,05;13,77;184;250;400;1.655;5;420;4.570;Limousine;Verbrenner
+S 580 4MATIC Limousine lang;526;4,4;143.514,00;17;226;250;700;2.160;5;535;5.289;Limousine;Verbrenner
+C 300 e;333;6,1;66.526,95;5,61;12;245;550;2.105;5;315;4.751;Limousine;Hybrid
+C 300 de;326;6,2;68.906,95;5,19;11;243;700;2.160;5;315;4.751;Limousine;Hybrid
+C 300 e 4MATIC;333;6,2;68.906,95;5,84;14;240;550;2.150;5;315;4.751;Limousine;Hybrid
+C 300 de 4MATIC;321;6,2;71.286,95;5,61;12;235;700;2.215;5;315;4.751;Limousine;Hybrid
+C 400 e 4MATIC;381;5,4;73.428,95;5,84;14;250;650;2.150;5;315;4.751;Limousine;Hybrid
+E 300 e Limousine;333;6,4;70.091,00;5,09;12;236;550;2.210;5;370;4.949;Limousine;Hybrid
+E 300 de Limousine;326;6,4;71.995,00;5,61;12;235;700;2.255;5;370;4.949;Limousine;Hybrid
+E 300 e 4MATIC Limousine;333;6,5;72.828,00;13,64;14;250;650;2.265;5;370;4.949;Limousine;Hybrid
+E 300 de 4MATIC Limousine;326;6,6;74.732,00;15,64;14;233;700;2.300;5;370;4.949;Limousine;Hybrid
+E 400 e 4MATIC Limousine;381;5,3;80.241,70;14,51;14;250;650;2.265;5;370;4.949;Limousine;Hybrid
+S 450 e Limousine;449;5,9;127.318,10;15,44;13;250;650;2.410;5;350;5.179;Limousine;Hybrid
+S 580 e Limousine;517;5,2;137.195,10;15,92;13;250;750;2.415;5;350;5.179;Limousine;Hybrid
+S 450 e Limousine lang;449;5,9;131.602,10;15,95;14;250;650;2.430;5;350;5.289;Limousine;Hybrid
+S 580 e Limousine lang;517;5,2;140.884,10;15,95;14;250;750;2.435;5;350;5.289;Limousine;Hybrid
+S 580 e 4MATIC Limousine lang;517;4,9;144.692,10;16,99;16;250;750;2.470;5;350;5.289;Limousine;Hybrid
+Mercedes-AMG 63 E Performance Limousine lang;802;3,3;208.749,80;22,92;104;250;1.430;2.595;5;305;5.336;Limousine;Hybrid
+Mercedes-Maybach 580 e;517;5,1;184.807,00;16,92;18;250;305;2.650;5;325;5.469;Limousine;Hybrid
+A 250 e Limousine;272;7,5;44.630,95;14,39;19;230;450;1.705;5;345;4.558;Limousine;Hybrid
+S 580 e 4MATIC Limousine;517;4,9;141.003,10;16,95;15;250;750;2.450;5;350;5.179;Limousine;Hybrid
+EQE 300;245;7,3;67.187,40;6,72;0;210;550;2.405;5;430;4.946;Limousine;Elektro
+EQE 350;292;6,4;70.995,40;6,72;0;210;565;2.405;5;430;4.946;Limousine;Elektro
+EQE 350 4MATIC;292;6,3;74.148,90;6,8;0;210;765;2.475;5;430;4.946;Limousine;Elektro
+EQE 500 4MATIC;408;4,7;88.214,70;6,88;0;210;858;2.485;5;430;4.946;Limousine;Elektro
+Mercedes-AMG EQE 43 4MATIC;476;4,2;104.755,70;14,28;0;210;858;2.535;5;430;4.946;Limousine;Elektro
+Mercedes-AMG EQE 53 4MATIC+;625;3,5;110.705,70;15,16;0;220;950;2.540;5;430;4.964;Limousine;Elektro
+EQS 450+;360;6,1;109.551,40;13,24;0;210;568;2.515;5;610;5.223;Limousine;Elektro
+EQS 450 4MATIC;360;5,6;113.359,40;14,76;0;210;800;2.630;5;610;5.223;Limousine;Elektro
+EQS 500 4MATIC;449;4,8;125.378,40;14,76;0;210;828;2.630;5;610;5.223;Limousine;Elektro
+EQS 580 4MATIC;544;4,3;141.705,20;14,8;0;210;858;2.635;5;610;5.223;Limousine;Elektro
+Mercedes-AMG EQS 53 4MATIC+;658;3,8;155.009,40;18,16;0;220;950;2.700;5;610;5.223;Limousine;Elektro

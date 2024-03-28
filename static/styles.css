@@ -1,0 +1,263 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+aside, main {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 10px;
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+aside {
+    flex: 1; /* allows each side column to take up equal space */
+}
+
+main {
+    flex: 2; /* allows center column to be larger than the two side columns */
+}
+
+h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+input[type=range] {
+    width: calc(100% - 70px); /* account for the size of the output so slider doesn't break to new line */
+    margin: 0;
+    vertical-align: middle;
+}
+
+input[type=number], input[type=button], button {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-height: 30px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.output {
+    display: inline-block;
+    width: 50px;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.suggestion {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion:last-child {
+    border-bottom: none;
+}
+
+.suggestion h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.suggestion p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    aside, main {
+        margin: 10px 0;
+    }
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-option span {
+    white-space: nowrap;
+}
+
+.filter-option input[type="number"] {
+    flex-grow: 1;
+}
+
+.filter-option {
+    margin-bottom: 10px; /* Abstand zwischen Filteroptionen */
+}
+
+.filter-option label {
+    display: block; /* Labels über den Steuerelementen */
+    margin-bottom: 5px; /* Kleiner Abstand zum Steuerelement */
+}
+
+.filter-option input[type="number"],
+.filter-option input[type="range"],
+.filter-option select {
+    width: 100%; /* Volle Breite im Container */
+    padding: 5px; /* Etwas Innenabstand für bessere Lesbarkeit */
+}
+
+/* Stile für den Anwenden-Button */
+#apply-filters {
+    background-color: #4CAF50; /* Grüner Hintergrund */
+    color: white; /* Weiße Schrift */
+    padding: 10px 20px; /* Größerer Innenabstand */
+    border: none; /* Keine Rahmenlinie */
+    cursor: pointer; /* Cursor ändert sich zum Klickzeiger */
+    margin-top: 20px; /* Abstand nach oben */
+    width: 100%; /* Volle Breite */
+}
+
+#apply-filters:hover {
+    background-color: #45a049; /* Dunklerer Grünton beim Darüberfahren */
+}
+
+/* Stile für Slider-Werte */
+.output {
+    display: inline-block; /* Nebeneinander statt untereinander */
+    margin-left: 10px; /* Abstand zwischen Slider und Wert */
+}
+
+/* Responsive Design: Layout-Anpassungen für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .filter-option label,
+    .filter-option input,
+    .filter-option select {
+        width: auto; /* Auto-Breite auf kleineren Bildschirmen */
+    }
+}
+
+.filter-group {
+    background-color: #f9f9f9; /* Leichter Hintergrund für die Gruppierung */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 15px; /* Innenabstand */
+    margin-bottom: 20px; /* Abstand zwischen den Gruppen */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Leichter Schatten für Tiefe */
+    min-width: 315px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0; /* Kein Abstand am letzten Element */
+}
+
+.filter-group label,
+.filter-group input,
+.filter-group select {
+    display: block; /* Elemente blockweise anzeigen */
+    width: 100%; /* Volle Breite innerhalb der Gruppe */
+    margin-bottom: 10px; /* Abstand nach unten */
+}
+
+.filter-group label {
+    margin-bottom: 5px; /* Geringerer Abstand für Labels */
+}
+
+.filter-group input[type='number'],
+.filter-group select {
+    padding: 8px; /* Etwas mehr Innenabstand für bessere Klickbarkeit */
+    border: 1px solid #ddd; /* Rahmen wie vorher */
+    border-radius: 4px; /* Abgerundete Ecken für Input-Elemente */
+}
+
+/* Anpassung für den Anwenden-Button */
+#apply-filters {
+    margin-top: 20px; /* Extra Abstand oben */
+}
+
+/* Responsive Design Anpassungen, falls notwendig */
+@media (max-width: 768px) {
+    .filter-group {
+        padding: 10px; /* Weniger Innenabstand auf kleinen Bildschirmen */
+    }
+}
+
+.filter-group {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-group h3 {
+    margin-bottom: 5px;
+  }
+  
+  input[type="range"] {
+    width: 80%; /* Adjust this to fit your layout */
+    margin: 0 auto;
+  }
+  
+  output {
+    display: block;
+    margin-top: 5px;
+  }
+  
+
+  .suggestion {
+    background-color: #fff; /* Weißer Hintergrund wie die anderen Container */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 20px; /* Padding wie bei den anderen Containern */
+    margin-bottom: 20px; /* Abstand zwischen den Vorschlägen */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Box-Schatten wie bei den anderen Containern */
+    border: 1px solid #ddd; /* Rand wie bei den anderen Containern */
+}
+
+/* Spezifische Anpassungen für den letzten Vorschlag */
+.suggestion:last-child {
+    margin-bottom: 0;
+}
+
+/* Anpassung für die Überschrift innerhalb des Vorschlags */
+.suggestion h3 {
+    color: #333; /* Dunklere Schriftfarbe für bessere Lesbarkeit */
+    margin-bottom: 10px; /* Etwas mehr Abstand zur Beschreibung */
+}
+
+/* Anpassung für die Beschreibung innerhalb des Vorschlags */
+.suggestion p {
+    color: #555; /* Etwas dunklere Schriftfarbe als der Standard */
+}
