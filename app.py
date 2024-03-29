@@ -3,10 +3,18 @@ import psycopg2
 from pgvector.psycopg2 import register_vector
 import numpy as np
 import math
+from dotenv import load_dotenv
+import os
 
 max_distance = math.sqrt(5)
 
 app = Flask(__name__)
+
+# Lade Umgebungsvariablen
+load_dotenv()
+database_url = os.getenv("DATABASE_URL")
+# Verbindung zur Datenbank herstellen
+conn = psycopg2.connect(database_url)   
 
 # Dummy-Funktion, die du durch eine echte Logik ersetzen musst, um die Vektor-Suche durchzuführen.
 def vector_search(filters, preferences):
@@ -17,9 +25,6 @@ def vector_search(filters, preferences):
     
 def get_normalization_limits():
     
-    # Lade Umgebungsvariablen
-    load_dotenv()
-    database_url = os.getenv("DATABASE_URL")
     # Verbindung zur Datenbank herstellen
     conn = psycopg2.connect(database_url)
     cur = conn.cursor()
@@ -61,7 +66,7 @@ def search():
     filters = {item.split('=')[0]: item.split('=')[1] for item in filters_str.split(';') if item}
 
     # Verbindung zur Datenbank herstellen
-    conn = psycopg2.connect(dbname="postgres", user="postgres", password="postgres", host="localhost")
+    conn = psycopg2.connect(database_url)
     cur = conn.cursor()
     register_vector(conn)
 
@@ -128,4 +133,4 @@ def borders():
     return jsonify(normalization_limits)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

@@ -1,15 +1,16 @@
 version: '3.8'
 services:
   db:
-    image: postgres
+    image: pgvector/pgvector:pg16
     volumes:
       - ./data/db:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_DB=mercedesdb
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=pass
     ports:
-      - "5433:5432" # Verwenden eines nicht-standard Ports
+      - "5434:5432" # Verwenden eines nicht-standard Ports
 
   app:
     build: .

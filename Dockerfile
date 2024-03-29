@@ -14,8 +14,5 @@ COPY . .
 # Port, den die App im Container nutzen wird, freigeben
 EXPOSE 5000
 
-# Datenbank initialisieren
-RUN python main.py
-
-# App starten
-CMD [ "python", "./app.py" ]
+# Vorherige Anweisungen beibehalten
+CMD ["/bin/bash", "./start.sh"]
