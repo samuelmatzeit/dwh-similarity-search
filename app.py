@@ -5,6 +5,7 @@ import numpy as np
 import math
 from dotenv import load_dotenv
 import os
+from time import sleep
 
 max_distance = math.sqrt(5)
 
@@ -14,7 +15,17 @@ app = Flask(__name__)
 load_dotenv()
 database_url = os.getenv("DATABASE_URL")
 # Verbindung zur Datenbank herstellen
-conn = psycopg2.connect(database_url)   
+interval = 5
+
+while True:
+    try:
+        conn = psycopg2.connect(database_url)
+        print("Verbindung zur Datenbank erfolgreich hergestellt!")
+        break  # Schleife verlassen, wenn die Verbindung erfolgreich ist
+    except psycopg2.OperationalError as e:
+        # Bei einer OperationalError-Exception (z.B. Datenbank nicht verfügbar), warte und versuche es erneut
+        print(f"Verbindung fehlgeschlagen, versuche es in {interval} Sekunden erneut...")
+        sleep(interval)
 
 # Dummy-Funktion, die du durch eine echte Logik ersetzen musst, um die Vektor-Suche durchzuführen.
 def vector_search(filters, preferences):
