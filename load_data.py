@@ -1,9 +1,5 @@
 import pandas as pd
-import numpy as np
-import psycopg2
-from psycopg2 import sql
 from dotenv import load_dotenv
-import os
 
 def format_decimal(value):
     """Convert a string to float, fixing decimal point issues."""
@@ -18,16 +14,7 @@ def normalize(column):
     min_value = df[column].min()
     df[column + "_norm"] = (df[column] - min_value) / (max_value - min_value)
 
-def execute_sql_statements(conn, statements):
-    cur = conn.cursor()
-    for statement in statements:
-        cur.execute(statement)
-    conn.commit()
-    cur.close()
 
-# Lade Umgebungsvariablen
-load_dotenv()
-database_url = os.getenv("DATABASE_URL")
 
 # Pfad zur CSV-Datei
 csv_path = 'DWH-Mercedes_Data.csv'
@@ -88,12 +75,6 @@ for index, row in df.iterrows():
     vectors_statements.append(vec_sql)
     
     current_id += 1
-
-# Führe die SQL-Statements direkt aus
-conn = psycopg2.connect(database_url)
-execute_sql_statements(conn, normalization_statements + specifications_statements + vectors_statements)
-conn.close()
-
 
 init_text = (
     f"CREATE EXTENSION IF NOT EXISTS vector;\n"
