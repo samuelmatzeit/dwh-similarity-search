@@ -54,12 +54,12 @@ vectors_statements = []
 for column, normalized_name in columns_to_normalize.items():
     max_value = df[column].max()
     min_value = df[column].min()
-    normalization_sql = f"""
-    INSERT INTO normalization_data (feature_name, min_value, max_value) 
-    VALUES ('{normalized_name}', {min_value}, {max_value})
-    ON CONFLICT (feature_name) 
-    DO UPDATE SET min_value = EXCLUDED.min_value, max_value = EXCLUDED.max_value;
-    """
+    normalization_sql = (
+    f"INSERT INTO normalization_data (feature_name, min_value, max_value) "
+    f"VALUES ('{normalized_name}', {min_value}, {max_value})"
+    f"ON CONFLICT (feature_name)"
+    f"DO UPDATE SET min_value = EXCLUDED.min_value, max_value = EXCLUDED.max_value;"
+    )
     normalization_statements.append(normalization_sql)
 
 # Normalisiere die spezifizierten Spalten
@@ -89,20 +89,57 @@ for index, row in df.iterrows():
     
     current_id += 1
 
-# Schreibe die SQL-Statements in Dateien
-with open('sql-commandset/normalization_data.sql', 'w') as f:
-    for statement in normalization_statements:
-        f.write("%s\n" % statement)
-
-with open('sql-commandset/vehicle_specification.sql', 'w') as f:
-    for statement in specifications_statements:
-        f.write("%s\n" % statement)
-
-with open('sql-commandset/vehicle_embedding.sql', 'w') as f:
-    for statement in vectors_statements:
-        f.write("%s\n" % statement)
-
 # Führe die SQL-Statements direkt aus
 conn = psycopg2.connect(database_url)
 execute_sql_statements(conn, normalization_statements + specifications_statements + vectors_statements)
 conn.close()
+
+
+init_text = (
+    f"CREATE EXTENSION IF NOT EXISTS vector;\n"
+    f"DROP TABLE IF EXISTS vehicle_specifications;\n"
+    f"DROP TABLE IF EXISTS vehicle_vectors;\n"
+    f"DROP TABLE IF EXISTS normalization_data;\n"
+    f"CREATE TABLE vehicle_specifications (\n"
+    f"    vehicle_id SERIAL PRIMARY KEY,\n"
+    f"    model VARCHAR(255),\n"
+    f"    power INT, -- Leistung in kW\n"
+    f"    acceleration NUMERIC, -- Beschleunigung 0-100 km/h in Sekunden\n"
+    f"    price NUMERIC, -- Preis (€)\n"
+    f"    consumption NUMERIC, -- Verbrauch (€ / 100km)\n"
+    f"    co2_emissions INT, -- CO2-Emissionen (g/km)\n"
+    f"    top_speed INT, -- Höchstgeschwindigkeit\n"
+    f"    torque INT, -- Drehmoment\n"
+    f"    curb_weight INT, -- Leergewicht\n"
+    f"    seats INT, -- Sitzplätze\n"
+    f"    trunk_volume INT, -- Kofferraumvolumen in L\n"
+    f"    vehicle_length NUMERIC, -- Länge\n"
+    f"    vehicle_class VARCHAR(50), -- Fahrzeugklasse\n"
+    f"    engine_type VARCHAR(50)  -- Motorart\n"
+    f");\n"
+    f"\nCREATE TABLE vehicle_vectors (\n"
+    f"    vehicle_id INT,\n"
+    f"    embedding vector(5),\n"
+    f"    FOREIGN KEY (vehicle_id) REFERENCES vehicle_specifications(vehicle_id)\n"
+    f");\n"
+    f"\nCREATE TABLE normalization_data (\n"
+    f"    feature_name TEXT PRIMARY KEY,\n"
+    f"    min_value FLOAT,\n"
+    f"    max_value FLOAT\n"
+    f");\n"
+)
+
+
+
+
+# Schreibe die SQL-Statements in Dateien
+with open('initdb/start_database.sql', 'w') as f:
+    f.write("%s\n" % init_text)
+    for statement in normalization_statements:
+        f.write("%s\n" % statement)
+    for statement in specifications_statements:
+        f.write("%s\n" % statement)
+    for statement in vectors_statements:
+        f.write("%s\n" % statement)
+
+        
