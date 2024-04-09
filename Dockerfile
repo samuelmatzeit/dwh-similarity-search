@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 5000
 
 # Vorherige Anweisungen beibehalten
-CMD ["/bin/bash", "./start.sh"]
+CMD ["/bin/bash", "python 3", "./app.py"]
