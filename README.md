@@ -6,7 +6,7 @@ Das Projekt dient der demonstration von ähnlichkeitssuche durch Vectordatenbank
 ## Hosted Version
 [mercedesfinder.matzeits.de](https://mercedesfinder.matzeits.de)
 
-## Installation
+## Installation mit Docker
 Projekt lokal speichern
 ```
 git clone https://github.com/samuelmatzeit/dwh-similarity-search.git
